@@ -23,5 +23,7 @@ jobs:
           git config user.name "github-actions"
           git config user.email "actions@github.com"
           git add .
-          git commit -m "Unzipped frontend project"
+          git commit -m "Unzipped frontend project" || echo "No changes to commit"
           git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
