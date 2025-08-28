@@ -1,0 +1,1 @@
+import { useNavigate } from 'react-router-dom'; export default function Login(){ const navigate=useNavigate(); const login=()=>navigate('/dashboard'); return (<div className='flex items-center justify-center h-screen'><button onClick={login} className='px-4 py-2 bg-blue-600 text-white rounded'>Login</button></div>);}

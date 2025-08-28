@@ -1,0 +1,1 @@
+export default function Navbar() { return (<div className='w-full bg-white shadow-md p-4 flex justify-between'> <h1 className='font-bold'>EHS Portal</h1></div>); }
