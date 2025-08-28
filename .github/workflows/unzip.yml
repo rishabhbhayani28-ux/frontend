@@ -1,0 +1,24 @@
+name: Unzip Frontend
+
+on:
+  workflow_dispatch: # run manually
+
+jobs:
+  unzip:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Unzip frontend files
+        run: |
+          unzip ehs-frontend-styled.zip -d .
+          rm ehs-frontend-styled.zip
+
+      - name: Commit unzipped files
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add .
+          git commit -m "Unzipped frontend project"
+          git push
